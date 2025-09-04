@@ -1,3 +1,4 @@
+import Link from "next/link";
 import productData from "../product_data.json";
 
 type Product = {
@@ -14,7 +15,9 @@ export default function ProductsPage() {
       <h1>Products</h1>
       {products.map((product) => (
         <div key={product.product_number}>
-          {product.product_number} - {product.title} - {product.file_location}
+          <Link href={`/products/${product.product_number}`}>
+            {product.product_number} - {product.title}
+          </Link>
         </div>
       ))}
     </div>
