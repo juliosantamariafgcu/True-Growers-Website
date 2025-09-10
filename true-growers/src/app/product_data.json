@@ -4,55 +4,73 @@
     {
       "product_number": "P001",
       "title": "Antioquia Lee (AL)",
-      "file_location": "CSV_tables/Antioquia Lee (AL)_table1.csv"
+      "file_location": "CSV_tables/Antioquia Lee (AL)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
     
     {
       "product_number": "P002",
       "title": "Antioquia Nica (AN)",
-      "file_location": "CSV_tables/Antioquia Nica (AN)_table1.csv"
+      "file_location": "CSV_tables/Antioquia Nica (AN)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P003",
       "title": "Artem (A)",
-      "file_location": "CSV_tables/Artem (A)_table1.csv"
+      "file_location": "CSV_tables/Artem (A)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P004",
       "title": "Galena (GA)",
-      "file_location": "CSV_tables/Galena (GA)_table1.csv"
+      "file_location": "CSV_tables/Galena (GA)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P005",
       "title": "Lauri Colombia (LC)",
-      "file_location": "CSV_tables/Lauri Colombia (LC)_table1.csv"
+      "file_location": "CSV_tables/Lauri Colombia (LC)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P006",
       "title": "Lili2 (L2)",
-      "file_location": "CSV_tables/Lili2 (L2)_table1.csv"
+      "file_location": "CSV_tables/Lili2 (L2)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P007",
       "title": "LuisT (LT)",
-      "file_location": "CSV_tables/LuisT (LT)_table1.csv"
+      "file_location": "CSV_tables/LuisT (LT)_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P008",
       "title": "Pato 2",
-      "file_location": "CSV_tables/Pato 2_table1.csv"
+      "file_location": "CSV_tables/Pato 2_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     },
 
     {
       "product_number": "P009",
       "title": "Wil1",
-      "file_location": "CSV_tables/Wil1_table1.csv"
+      "file_location": "CSV_tables/Wil1_table1.csv",
+      "info": "",
+      "image":"/cannabis-sativa-L.jpg"
     }
   ]
 }
