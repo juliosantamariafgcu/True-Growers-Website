@@ -7,12 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body>
-        <Navbar/>
-          
+    <html lang="en">
+      <body className="bg-black text-white font-sans min-h-screen">
+        <Navbar />
         {children}
-
       </body>
     </html>
   );
