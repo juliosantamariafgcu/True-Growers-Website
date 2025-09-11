@@ -2,14 +2,14 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}", // App Router Pages
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}", // Pages Router
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",// Reusable Components
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        coda: ["Coda", "sans-serif"],          
+        coda: ["Coda", "sans-serif"],
       },
     },
   },

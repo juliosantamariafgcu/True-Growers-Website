@@ -11,28 +11,28 @@ export default function Home() {
     .slice(0, 3);
 
   return (
-    <div>
+    <div className="pt-[42px]">
       {/* Hero Section */}
-      <div className="relative h-[400px] w-full">
+      <div className="relative h-[470px] w-full">
         <Image
           src="/cannabis-sativa-L.jpg"
           alt="Background cannabis plants"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-50"
         />
         <div className="absolute inset-0 flex justify-center items-center">
           <Image
             src="/logo_image_transparent.png"
             alt="Logo"
-            width={150}
-            height={150}
+            width={220}
+            height={220}
           />
         </div>
       </div>
 
       {/* Quote Section */}
       <div className="text-center my-12">
-        <p className="text-xl italic">“Quote of some sort here.”</p>
+        <p className="font-normal text-[#CCCCC] text-2xl">“Quote of some sort here.”</p>
       </div>
 
       {/* Product Cards */}
@@ -40,9 +40,8 @@ export default function Home() {
         {randomProducts.map((product) => (
           <div
             key={product.product_number}
-            className="rounded-2xl p-4 bg-[#666666] hover:bg-[#002816] transition-colors duration-300"
+            className="rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300"
           >
-            <p className="text-gray-300 text-sm mb-2">Product info</p>
             <div className="flex gap-4">
               <Image
                 src={product.image}
@@ -52,9 +51,9 @@ export default function Home() {
                 className="rounded-md object-cover"
               />
               <div>
-                <h3 className="font-bold text-lg">{product.title}</h3>
-                <p className="text-sm text-gray-200 whitespace-pre-line">
-                  {product.info || "No additional info available."}
+                <h3 className="font-extrabold text-lg text-[#EBEBEB]">{product.title}</h3>
+                <p className="text-sm text-[#CCCCCC] whitespace-pre-line">
+                  {product.info || "No additional information available."}
                 </p>
               </div>
             </div>
