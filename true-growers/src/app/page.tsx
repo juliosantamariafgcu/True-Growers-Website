@@ -51,7 +51,7 @@ export default function Home() {
                 className="rounded-md object-cover"
               />
               <div>
-                <h3 className="font-extrabold text-lg text-[#EBEBEB]">{product.title}</h3>
+                <h3 className="font-normal text-lg text-[#EBEBEB]">{product.title}</h3>
                 <p className="text-sm text-[#CCCCCC] whitespace-pre-line">
                   {product.info || "No additional information available."}
                 </p>
