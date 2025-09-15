@@ -50,13 +50,15 @@ export default async function ProductPage({
 
   return (
     <div className="pt-[42px] flex flex-col items-center">
-      <div className="w-[95%] max-w-3xl mb-4">
+      {/* Back button */}
+      <div className="w-[95%] max-w-5xl mb-4">
         <Link href="/products" className="text-blue-400 hover:underline flex items-center">
           ← Back to Products
         </Link>
       </div>
 
-      <div className="bg-[#3A3A3A] rounded-2xl shadow-md flex items-center p-6 w-[95%] max-w-3xl mb-8">
+      {/* Product image + title */}
+      <div className="flex items-center w-[95%] max-w-5xl mb-6">
         {currentProduct.image && (
           <div className="w-32 h-32 relative flex-shrink-0">
             <Image
@@ -72,9 +74,10 @@ export default async function ProductPage({
         </div>
       </div>
 
+      {/* CSV table */}
       {csvData.length > 0 ? (
         <div className="overflow-x-auto w-[95%] max-w-5xl">
-          <table className="w-full border-collapse text-sm text-left rounded-lg overflow-hidden">
+          <table className="w-full border-collapse text-sm text-left overflow-hidden">
             <tbody>
               {csvData.map((row, rowIndex) => (
                 <tr
