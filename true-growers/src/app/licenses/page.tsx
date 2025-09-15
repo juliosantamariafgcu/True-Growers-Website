@@ -14,6 +14,7 @@ function PdfLicense({title, src, isOpen, togglePdf}: PdfLicenseProps) {
   const [openPdf, setOpen] = useState(false);
 
   return (
+    
     <div className="border rounded-2xl shadow-md mb-4 overflow-hidden">
       {/* Header for the accordion*/}
       <button
@@ -66,17 +67,18 @@ export default function LicenseAccordion() {
   ]
 
   return (
-    
-    <div className="max-w-4xl mx-auto mt-6 space-y-3">
-      {items.map((item, i) => (
-        <PdfLicense
-          key={i}
-          title={item.title}
-          src={item.src}
-          isOpen={openIndex === i}
-          togglePdf={() => setOpenIndex(openIndex === i ? null : i)}
-        />
-      ))}
+    <div className="pt-[42px]">
+      <div className="max-w-4xl mx-auto mt-6 space-y-3">
+        {items.map((item, i) => (
+          <PdfLicense
+            key={i}
+            title={item.title}
+            src={item.src}
+            isOpen={openIndex === i}
+            togglePdf={() => setOpenIndex(openIndex === i ? null : i)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

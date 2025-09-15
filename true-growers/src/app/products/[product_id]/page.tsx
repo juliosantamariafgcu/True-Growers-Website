@@ -42,25 +42,27 @@ export default async function ProductPage({
 
   return (
     <div>
-      <h1>{currentProduct.title}</h1>
-      <p>Product Number: {currentProduct.product_number}</p>
-      <p>File Location: {currentProduct.file_location}</p>
+      <div className="pt-[42px]">
+        <h1>{currentProduct.title}</h1>
+        <p>Product Number: {currentProduct.product_number}</p>
+        <p>File Location: {currentProduct.file_location}</p>
 
-      {csvData.length > 0 ? (
-        <table>
-          <tbody>
-            {csvData.map((row, rowIndex) => (
-              <tr key={rowIndex}>
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No CSV data available.</p>
-      )}
+        {csvData.length > 0 ? (
+          <table>
+            <tbody>
+              {csvData.map((row, rowIndex) => (
+                <tr key={rowIndex}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No CSV data available.</p>
+        )}
+      </div>
     </div>
   );
 }

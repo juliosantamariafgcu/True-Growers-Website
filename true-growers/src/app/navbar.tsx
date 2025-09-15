@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#141414] h-[42px] px-8 pt-3 shadow-md z-50">
       <div className="flex items-center justify-between">
@@ -15,14 +21,33 @@ export default function Navbar() {
           />
         </div>
 
-        <div className="flex space-x-10 text-[#CCCCCC] text-sm font-normal">
+        {/*Desktop navbar*/}
+        <div className="hidden md:flex space-x-10 text-[#CCCCCC] text-sm font-normal">
           <Link href="/" className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
           <Link href="/about_us" className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
           <Link href="/products" className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
           <Link href="/licenses" className="hover:text-[#4A9833] transition-colors duration-200">Licenses</Link>
         </div>
+
+        {/*Mobile hamburger button*/}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-[#CCCCCC] focus:outline-none"
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/*Mobile menu*/}
+      {isOpen && (
+        <div className="md:hidden flex flex-col space-y-4 mt-2 text-[#CCCCCC] text-sm font-normal bg-[#141414] p-4 shadow-lg">
+          <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
+          <Link href="/about_us" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
+          <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
+          <Link href="/licenses" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Licenses</Link>
+        </div>
+      )}
     </nav>
 
-  );
+);
 }

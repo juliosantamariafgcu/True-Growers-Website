@@ -12,14 +12,16 @@ export default function ProductsPage() {
 
   return (
     <div>
-      <h1>Products</h1>
-      {products.map((product) => (
-        <div key={product.product_number}>
-          <Link href={`/products/${product.product_number}`}>
-            {product.title}
-          </Link>
-        </div>
-      ))}
+      <div className="pt-[42px]">
+        <h1>Products</h1>
+        {products.map((product) => (
+          <div key={product.product_number}>
+            <Link href={`/products/${product.product_number}`}>
+              {product.title}
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
