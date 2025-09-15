@@ -4,11 +4,11 @@ export default function About_Us() {
   return (
     <div className="mt-[110px] mx-[90px] mb-[70px]">
 
-      <div className="float-left text-5xl mr-8 mb-4">
+      <div className="float-left text-4xl mr-8 mb-4">
         About Us
       </div>
 
-      <p>
+      <p className="text-sm">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut 
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit 
@@ -20,6 +20,10 @@ export default function About_Us() {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id 
         est laborum.
       </p>
+  
+  <div className="text-4xl mt-[50px]">Meet the Team</div>
+  <div className="h-px bg-gray-400 mb-[50px]"></div>
+
 
       {/* Employee Cards */}
       <div className="mx-9">
@@ -27,18 +31,18 @@ export default function About_Us() {
           <Image
             src="/blank-pfp.png" 
             alt="Profile Photo"
-            width={120}
-            height={120}
+            width={100}
+            height={100}
           />
         </div>
 
-        <div className="float-left text-2xl mx-9">
+        <div className="float-left text-lg mx-9">
           First Last
-          <div className="clear-left text-base">Position Held</div>
+          <div className="clear-left text-sm">Position Held</div>
         </div>
         
 
-        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 
+        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 text-sm
         mt-10 p-5">
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
@@ -51,18 +55,18 @@ export default function About_Us() {
           <Image
             src="/blank-pfp.png" 
             alt="Profile Photo"
-            width={120}
-            height={120}
+            width={100}
+            height={100}
           />
         </div>
 
-        <div className="float-right text-2xl mx-9">
+        <div className="float-right text-lg mx-9">
           First Last
-          <div className="clear-right text-base">Position Held</div>
+          <div className="clear-right text-sm">Position Held</div>
         </div>
         
 
-        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 
+        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 text-sm
         mt-10 p-5">
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
@@ -75,24 +79,33 @@ export default function About_Us() {
           <Image
             src="/blank-pfp.png" 
             alt="Profile Photo"
-            width={120}
-            height={120}
+            width={100}
+            height={100}
           />
         </div>
 
-        <div className="float-left text-2xl mx-9">
+        <div className="float-left text-lg mx-9">
           First Last
-          <div className="clear-left text-base">Position Held</div>
+          <div className="clear-left text-sm">Position Held</div>
         </div>
         
 
-        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 
+        <div className="flex rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300 text-sm
         mt-10 p-5">
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
           autobiography autobiography autobiography autobiography autobiography autobiography autobiography 
           autobiography 
         </div>
       </div>
+
+      <div className="flex items-center justify-center mt-[50px]">
+          <Image
+            src="/form-with-logo.png" 
+            alt="Temp. Contact Form"
+            width={500}
+            height={500}
+          />
+        </div>
 
     </div>
   );
