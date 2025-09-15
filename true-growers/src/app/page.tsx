@@ -1,5 +1,6 @@
 import Image from "next/image";
 import productData from "./product_data.json";
+import Link from "next/link";
 
 export default function Home() {
   // Access the array under "products"
@@ -60,6 +61,15 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* ADD BUTTON FOR PRODUCTS HERE */}
+      <div className="flex justify-center pb-5">
+        <Link href="/products" className="button rounded bg-[#3A3A3A] py-2 px-4 
+          hover:bg-[#002816] transition-colors duration-300 active:bg-[#001F11]">
+          More Products
+        </Link>
+      </div>
+
     </div>
   );
 }
