@@ -70,6 +70,15 @@ export default function Home() {
         </Link>
       </div>
 
+      <div className="flex items-center justify-center mt-[50px] mb-2">
+                <Image
+                  src="/form-with-logo.png" 
+                  alt="Temp. Contact Form"
+                  width={450}
+                  height={450}
+                />
+            </div>
+
     </div>
   );
 }

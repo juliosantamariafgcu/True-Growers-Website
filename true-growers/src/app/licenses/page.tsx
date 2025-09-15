@@ -15,11 +15,11 @@ function PdfLicense({title, src, isOpen, togglePdf}: PdfLicenseProps) {
 
   return (
     
-    <div className="border rounded-2xl shadow-md mb-4 overflow-hidden">
+    <div className="rounded-xl mb-4 overflow-hidden">
       {/* Header for the accordion*/}
       <button
         onClick={togglePdf}
-        className="w-full text-left p-4 font-semibold bg-gray-100 hover:bg-gray-200 flex justify-between items-center"
+        className="w-full text-[#CCCCCC] text-left p-4 bg-[#3A3A3A] hover:bg-[#015730] flex justify-between items-center"
       >
         {title}
         {isOpen ? (

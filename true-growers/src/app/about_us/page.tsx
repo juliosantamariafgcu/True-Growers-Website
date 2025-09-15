@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About_Us() {
   return (
-    <div className="mt-[110px] mx-[90px] mb-[70px]">
+    <div className="mt-[110px] mx-[90px] mb-2">
 
       <div className="float-left text-4xl mr-8 mb-4">
         About Us
@@ -21,8 +21,8 @@ export default function About_Us() {
         est laborum.
       </p>
   
-  <div className="text-4xl mt-[50px]">Meet the Team</div>
-  <div className="h-px bg-gray-400 mb-[50px]"></div>
+      <div className="text-4xl mt-[50px]">Meet the Team</div>
+      <div className="h-px bg-gray-400 mb-[50px]"></div>
 
 
       {/* Employee Cards */}
@@ -102,10 +102,10 @@ export default function About_Us() {
           <Image
             src="/form-with-logo.png" 
             alt="Temp. Contact Form"
-            width={500}
-            height={500}
+            width={450}
+            height={450}
           />
-        </div>
+      </div>
 
     </div>
   );
