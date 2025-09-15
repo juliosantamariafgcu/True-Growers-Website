@@ -62,10 +62,10 @@ export default function Home() {
         ))}
       </div>
 
-      {/* ADD BUTTON FOR PRODUCTS HERE */}
+      {/* BUTTON PRODUCTS */}
       <div className="flex justify-center pb-5">
         <Link href="/products" className="button rounded bg-[#3A3A3A] py-2 px-4 
-          hover:bg-[#002816] transition-colors duration-300 active:bg-[#001F11]">
+          hover:bg-[#015730] transition-colors duration-300 active:bg-[#002816]">
           More Products
         </Link>
       </div>
