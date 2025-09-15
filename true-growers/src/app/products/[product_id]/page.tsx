@@ -1,3 +1,4 @@
+import Link from "next/link";
 import productData from "../../product_data.json";
 import fs from "fs";
 import path from "path";
@@ -38,7 +39,6 @@ export default async function ProductPage({
     );
   }
 
-  // Read CSV file synchronously from public folder
   const filePath = path.join(process.cwd(), "public", currentProduct.file_location);
   let csvData: string[][] = [];
   try {
@@ -50,7 +50,12 @@ export default async function ProductPage({
 
   return (
     <div className="pt-[42px] flex flex-col items-center">
-      {/* Product Card */}
+      <div className="w-[95%] max-w-3xl mb-4">
+        <Link href="/products" className="text-blue-400 hover:underline flex items-center">
+          ← Back to Products
+        </Link>
+      </div>
+
       <div className="bg-[#3A3A3A] rounded-2xl shadow-md flex items-center p-6 w-[95%] max-w-3xl mb-8">
         {currentProduct.image && (
           <div className="w-32 h-32 relative flex-shrink-0">
@@ -67,7 +72,6 @@ export default async function ProductPage({
         </div>
       </div>
 
-      {/* CSV Table */}
       {csvData.length > 0 ? (
         <div className="overflow-x-auto w-[95%] max-w-5xl">
           <table className="w-full border-collapse text-sm text-left rounded-lg overflow-hidden">
@@ -93,7 +97,6 @@ export default async function ProductPage({
       ) : (
         <p className="text-gray-500 italic">No CSV data available.</p>
       )}
-
     </div>
   );
 }
