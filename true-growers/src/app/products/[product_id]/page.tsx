@@ -51,10 +51,10 @@ export default async function ProductPage({
 
   return (
     <PageWrapper>
-      <div className="pt-[42px] flex flex-col items-center">
+      <div className="flex flex-col items-center">
         {/* Back button */}
         <div className="w-[95%] max-w-5xl mb-4">
-          <Link href="/products" className="text-blue-400 hover:underline flex items-center">
+          <Link href="/products" className="text-[#015730] hover:text-[#4A9833] transition-colors duration-200 flex items-center">
             ← Back to Products
           </Link>
         </div>
@@ -71,25 +71,29 @@ export default async function ProductPage({
               />
             </div>
           )}
-          <div className="ml-6 text-white">
-            <h1 className="text-2xl">{currentProduct.title}</h1>
+          <div className="ml-6">
+            <h1 className="text-2xl font-semibold">{currentProduct.title}</h1>
           </div>
         </div>
 
         {/* CSV table */}
         {csvData.length > 0 ? (
           <div className="overflow-x-auto w-[95%] max-w-5xl">
-            <table className="w-full border-collapse text-sm text-left overflow-hidden">
+            <table className="w-full border-collapse text-sm text-left overflow-hidden rounded-lg shadow-md">
               <tbody>
                 {csvData.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
-                    className={rowIndex % 2 === 0 ? "bg-[#3A3A3A]" : "bg-[#4A4A4A]"}
+                    className={
+                      rowIndex % 2 === 0
+                        ? "bg-[#3A3A3A] text-white"
+                        : "bg-[#4A4A4A] text-white"
+                    }
                   >
                     {row.map((cell, cellIndex) => (
                       <td
                         key={cellIndex}
-                        className="px-4 py-2 border border-gray-600 text-white"
+                        className="px-4 py-2 border border-gray-600"
                       >
                         {cell}
                       </td>
@@ -100,7 +104,7 @@ export default async function ProductPage({
             </table>
           </div>
         ) : (
-          <p className="text-gray-500 italic">No CSV data available.</p>
+          <p className="italic opacity-70">No CSV data available.</p>
         )}
       </div>
     </PageWrapper>

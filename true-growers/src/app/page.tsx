@@ -4,17 +4,15 @@ import Link from "next/link";
 import PageWrapper from "./wrapper";
 
 export default function Home() {
-  // Access the array under "products"
   const products = productData.products ?? [];
 
-  // Pick 3 random ones
   const randomProducts = [...products]
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
   return (
     <PageWrapper>
-      <div className="pt-[42px]">
+      <div>
         {/* Hero Section */}
         <div className="relative h-[470px] w-full">
           <Image
@@ -35,7 +33,7 @@ export default function Home() {
 
         {/* Quote Section */}
         <div className="text-center my-12">
-          <p className="font-normal text-[#CCCCC] text-2xl">“Quote of some sort here.”</p>
+          <p className="font-normal text-2xl">“Quote of some sort here.”</p>
         </div>
 
         {/* Product Cards */}
@@ -43,8 +41,8 @@ export default function Home() {
           {randomProducts.map((product) => (
             <div
               key={product.product_number}
-              className="rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300"
-            >
+              className="rounded-xl p-4 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
+              >
               <div className="flex gap-4">
                 <Image
                   src={product.image}
@@ -54,8 +52,8 @@ export default function Home() {
                   className="rounded-md object-cover"
                 />
                 <div>
-                  <h3 className="font-normal text-lg text-[#EBEBEB]">{product.title}</h3>
-                  <p className="text-sm text-[#CCCCCC] whitespace-pre-line">
+                  <h3 className="font-medium text-lg">{product.title}</h3>
+                  <p className="text-sm whitespace-pre-line">
                     {product.info || "No additional information available."}
                   </p>
                 </div>
@@ -66,21 +64,17 @@ export default function Home() {
 
         {/* BUTTON PRODUCTS */}
         <div className="flex justify-center pb-5">
-          <Link href="/products" className="button rounded bg-[#3A3A3A] py-2 px-4 
-            hover:bg-[#015730] transition-colors duration-300 active:bg-[#002816]">
-            More Products
-          </Link>
+          <Link href="/products" className="button rounded py-2 px-6 font-medium bg-[#4A9833] dark:bg-[#015730] text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300">More Products</Link>
         </div>
 
         <div className="flex items-center justify-center mt-[50px] mb-2">
-                  <Image
-                    src="/form-with-logo.png" 
-                    alt="Temp. Contact Form"
-                    width={450}
-                    height={450}
-                  />
-              </div>
-
+          <Image
+            src="/form-with-logo.png"
+            alt="Temp. Contact Form"
+            width={450}
+            height={450}
+          />
+        </div>
       </div>
     </PageWrapper>
   );

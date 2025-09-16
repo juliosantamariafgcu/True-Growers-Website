@@ -15,24 +15,25 @@ export default function ProductsPage() {
 
   return (
     <PageWrapper>
-      <div className="pt-[42px] flex flex-col items-center">
+      <div className="flex flex-col items-center">
         <h1 className="text-2xl mb-6">Products</h1>
-        
+
         <div
           className="grid gap-6 w-full px-4
-                    grid-cols-[repeat(auto-fit,minmax(260px,1fr))] 
-                    sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] 
-                    lg:grid-cols-[repeat(auto-fit,minmax(436px,1fr))] 
-                    max-w-[1400px] mx-auto"
+                     grid-cols-[repeat(auto-fit,minmax(260px,1fr))] 
+                     sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] 
+                     lg:grid-cols-[repeat(auto-fit,minmax(436px,1fr))] 
+                     max-w-[1400px] mx-auto"
         >
-
-
-          
           {products.map((product) => (
             <Link
               key={product.product_number}
               href={`/products/${product.product_number}`}
-              className="bg-[#3A3A3A] hover:bg-[#002816] rounded-2xl shadow-md overflow-hidden flex items-center p-4 transition-colors duration-300 w-full">
+              className="rounded-2xl shadow-md overflow-hidden flex items-center p-4
+                         bg-[#D2E4D6] dark:bg-[#36593D]
+                         hover:bg-[#4A9833] dark:hover:bg-[#346B24]
+                         transition-colors duration-300 w-full"
+            >
               <div className="w-28 h-28 relative flex-shrink-0">
                 <Image
                   src={product.image}
@@ -43,7 +44,7 @@ export default function ProductsPage() {
               </div>
 
               <div className="ml-6 flex-1">
-                <h2 className="text-white text-lg">{product.title}</h2>
+                <h2 className="text-lg font-medium">{product.title}</h2>
               </div>
             </Link>
           ))}

@@ -13,10 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${coda.className} bg-white text-black dark:bg-[#141414] dark:text-white min-h-screen`}>
+    <html lang="en" className="h-full">
+      <body className={`${coda.className} bg-[#EBEBEB] text-[#141414] dark:bg-[#141414] dark:text-[#EBEBEB] min-h-screen flex flex-col`}>
         <Navbar />
-        {children}
+        <main className="flex-1 pt-[50px]">
+          {children}
+        </main>
       </body>
     </html>
   );
