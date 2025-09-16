@@ -27,7 +27,7 @@ export default function Navbar() {
           <Link href="/" className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
           <Link href="/about_us" className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
           <Link href="/products" className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
-          <Link href="/licenses" className="hover:text-[#4A9833] transition-colors duration-200">Licenses</Link>
+          <Link href="/contact_us" className="hover:text-[#4A9833] transition-colors duration-200">Contact Us</Link>
         </div>
 
         {/*Mobile hamburger button*/}
@@ -42,7 +42,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
           <Link href="/about_us" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
           <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
-          <Link href="/licenses" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Licenses</Link>
+          <Link href="/contact_us" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Contact Us</Link>
         </div>
       )}
     </nav>
