@@ -30,7 +30,7 @@ function LicenseItem({ name, title, src }: Item) {
           aria-hidden
           className={`h-5 w-5 transform transition-transform ${
             open ? "rotate-180" : ""
-          }`}
+            }`}
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -74,33 +74,28 @@ export default function LicensesAccordion() {
   const items: Item[] = [
     {
       name: "Seed Use License",
-      title:
-        "Resolution 1899 of 22 Nov 2021 – License for Seed Use (TRUE GROWERS)",
-      src: "/licenses/2021-11-22_Grant_License_SeedUseForPlanting_TRUEGROWERS.pdf",
+      title: "Resolution 1899 of 22 Nov 2021 – License for Seed Use (TRUE GROWERS)",
+      src: "/Licenses/2021-11-22_Grant_License_SeedUseForPlanting_TRUEGROWERS.pdf",
     },
     {
       name: "Non-Psychoactive Cultivation",
-      title:
-        "Resolution 0202 of 17 Feb 2022 – License for Non-Psychoactive Cannabis (TRUE GROWERS)",
-      src: "/licenses/2022-02-17_Grant_License_NonPsychoactiveCannabis_TRUEGROWERS.pdf",
+      title: "Resolution 0202 of 17 Feb 2022 – License for Cultivation of Non-Psychoactive Cannabis (TRUE GROWERS)",
+      src: "/Licenses/2022-02-17_Grant_License_NonPsychoactiveCannabis_TRUEGROWERS.pdf",
     },
     {
       name: "Psychoactive Cultivation",
-      title:
-        "Resolution 0199 of 16 Feb 2022 – License for Psychoactive Cannabis (TRUE GROWERS)",
-      src: "/licenses/2022-02-16_Grant_License_PsychoactiveCannabis_TRUEGROWERS.pdf",
+      title: "Resolution 0199 of 16 Feb 2022 – License for Cultivation of Psychoactive Cannabis (TRUE GROWERS)",
+      src: "/Licenses/2022-02-16_Grant_License_PsychoactiveCannabis_TRUEGROWERS.pdf",
     },
     {
       name: "Modification – Psychoactive Export",
-      title:
-        "Resolution 1555 of 18 Aug 2022 – Modification Psychoactive Cannabis License (TRUE GROWERS)",
-      src: "/licenses/2022-08-18_Modification_License_PsychoactiveCannabis_Export_TRUEGROWERS.pdf",
+      title: "Resolution 1555 of 18 Aug 2022 – Modification of Psychoactive Cannabis Cultivation License to include Export (TRUE GROWERS)",
+      src: "/Licenses/2022-08-18_Modification_License_PsychoactiveCannabis_Export_TRUEGROWERS.pdf",
     },
     {
       name: "Modification – Non-Psychoactive Export",
-      title:
-        "Resolution 0964 of 25 May 2022 – Modification Non-Psychoactive Cannabis License (TRUE GROWERS)",
-      src: "/licenses/2022-05-25_Modification_License_NonPsychoactiveCannabis_Export_TRUEGROWERS.pdf",
+      title: "Resolution 0964 of 25 May 2022 – Modification of Non-Psychoactive Cannabis Cultivation License to include Export (TRUE GROWERS)",
+      src: "/Licenses/2022-05-25_Modification_License_NonPsychoactiveCannabis_Export_TRUEGROWERS.pdf",
     },
   ];
 
