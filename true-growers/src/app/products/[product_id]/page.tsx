@@ -3,6 +3,7 @@ import productData from "../../product_data.json";
 import fs from "fs";
 import path from "path";
 import Image from "next/image";
+import PageWrapper from "@/app/wrapper";
 
 type Product = {
   product_number: string;
@@ -49,57 +50,59 @@ export default async function ProductPage({
   }
 
   return (
-    <div className="pt-[42px] flex flex-col items-center">
-      {/* Back button */}
-      <div className="w-[95%] max-w-5xl mb-4">
-        <Link href="/products" className="text-blue-400 hover:underline flex items-center">
-          ← Back to Products
-        </Link>
-      </div>
+    <PageWrapper>
+      <div className="pt-[42px] flex flex-col items-center">
+        {/* Back button */}
+        <div className="w-[95%] max-w-5xl mb-4">
+          <Link href="/products" className="text-blue-400 hover:underline flex items-center">
+            ← Back to Products
+          </Link>
+        </div>
 
-      {/* Product image + title */}
-      <div className="flex items-center w-[95%] max-w-5xl mb-6">
-        {currentProduct.image && (
-          <div className="w-32 h-32 relative flex-shrink-0">
-            <Image
-              src={currentProduct.image}
-              alt={currentProduct.title}
-              fill
-              className="object-cover rounded-md"
-            />
+        {/* Product image + title */}
+        <div className="flex items-center w-[95%] max-w-5xl mb-6">
+          {currentProduct.image && (
+            <div className="w-32 h-32 relative flex-shrink-0">
+              <Image
+                src={currentProduct.image}
+                alt={currentProduct.title}
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
+          )}
+          <div className="ml-6 text-white">
+            <h1 className="text-2xl">{currentProduct.title}</h1>
           </div>
-        )}
-        <div className="ml-6 text-white">
-          <h1 className="text-2xl">{currentProduct.title}</h1>
         </div>
-      </div>
 
-      {/* CSV table */}
-      {csvData.length > 0 ? (
-        <div className="overflow-x-auto w-[95%] max-w-5xl">
-          <table className="w-full border-collapse text-sm text-left overflow-hidden">
-            <tbody>
-              {csvData.map((row, rowIndex) => (
-                <tr
-                  key={rowIndex}
-                  className={rowIndex % 2 === 0 ? "bg-[#3A3A3A]" : "bg-[#4A4A4A]"}
-                >
-                  {row.map((cell, cellIndex) => (
-                    <td
-                      key={cellIndex}
-                      className="px-4 py-2 border border-gray-600 text-white"
-                    >
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <p className="text-gray-500 italic">No CSV data available.</p>
-      )}
-    </div>
+        {/* CSV table */}
+        {csvData.length > 0 ? (
+          <div className="overflow-x-auto w-[95%] max-w-5xl">
+            <table className="w-full border-collapse text-sm text-left overflow-hidden">
+              <tbody>
+                {csvData.map((row, rowIndex) => (
+                  <tr
+                    key={rowIndex}
+                    className={rowIndex % 2 === 0 ? "bg-[#3A3A3A]" : "bg-[#4A4A4A]"}
+                  >
+                    {row.map((cell, cellIndex) => (
+                      <td
+                        key={cellIndex}
+                        className="px-4 py-2 border border-gray-600 text-white"
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p className="text-gray-500 italic">No CSV data available.</p>
+        )}
+      </div>
+    </PageWrapper>
   );
 }

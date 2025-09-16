@@ -1,6 +1,7 @@
 import Image from "next/image";
 import productData from "./product_data.json";
 import Link from "next/link";
+import PageWrapper from "./wrapper";
 
 export default function Home() {
   // Access the array under "products"
@@ -12,73 +13,75 @@ export default function Home() {
     .slice(0, 3);
 
   return (
-    <div className="pt-[42px]">
-      {/* Hero Section */}
-      <div className="relative h-[470px] w-full">
-        <Image
-          src="/cannabis-sativa-L.jpg"
-          alt="Background cannabis plants"
-          fill
-          className="object-cover opacity-50"
-        />
-        <div className="absolute inset-0 flex justify-center items-center">
+    <PageWrapper>
+      <div className="pt-[42px]">
+        {/* Hero Section */}
+        <div className="relative h-[470px] w-full">
           <Image
-            src="/logo_image_transparent.png"
-            alt="Logo"
-            width={220}
-            height={220}
+            src="/cannabis-sativa-L.jpg"
+            alt="Background cannabis plants"
+            fill
+            className="object-cover opacity-50"
           />
+          <div className="absolute inset-0 flex justify-center items-center">
+            <Image
+              src="/logo_image_transparent.png"
+              alt="Logo"
+              width={220}
+              height={220}
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Quote Section */}
-      <div className="text-center my-12">
-        <p className="font-normal text-[#CCCCC] text-2xl">“Quote of some sort here.”</p>
-      </div>
+        {/* Quote Section */}
+        <div className="text-center my-12">
+          <p className="font-normal text-[#CCCCC] text-2xl">“Quote of some sort here.”</p>
+        </div>
 
-      {/* Product Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8 pb-12">
-        {randomProducts.map((product) => (
-          <div
-            key={product.product_number}
-            className="rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300"
-          >
-            <div className="flex gap-4">
-              <Image
-                src={product.image}
-                alt={product.title}
-                width={120}
-                height={120}
-                className="rounded-md object-cover"
-              />
-              <div>
-                <h3 className="font-normal text-lg text-[#EBEBEB]">{product.title}</h3>
-                <p className="text-sm text-[#CCCCCC] whitespace-pre-line">
-                  {product.info || "No additional information available."}
-                </p>
+        {/* Product Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-8 pb-12">
+          {randomProducts.map((product) => (
+            <div
+              key={product.product_number}
+              className="rounded-xl p-4 bg-[#3A3A3A] hover:bg-[#002816] transition-colors duration-300"
+            >
+              <div className="flex gap-4">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={120}
+                  height={120}
+                  className="rounded-md object-cover"
+                />
+                <div>
+                  <h3 className="font-normal text-lg text-[#EBEBEB]">{product.title}</h3>
+                  <p className="text-sm text-[#CCCCCC] whitespace-pre-line">
+                    {product.info || "No additional information available."}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* BUTTON PRODUCTS */}
+        <div className="flex justify-center pb-5">
+          <Link href="/products" className="button rounded bg-[#3A3A3A] py-2 px-4 
+            hover:bg-[#015730] transition-colors duration-300 active:bg-[#002816]">
+            More Products
+          </Link>
+        </div>
+
+        <div className="flex items-center justify-center mt-[50px] mb-2">
+                  <Image
+                    src="/form-with-logo.png" 
+                    alt="Temp. Contact Form"
+                    width={450}
+                    height={450}
+                  />
+              </div>
+
       </div>
-
-      {/* BUTTON PRODUCTS */}
-      <div className="flex justify-center pb-5">
-        <Link href="/products" className="button rounded bg-[#3A3A3A] py-2 px-4 
-          hover:bg-[#015730] transition-colors duration-300 active:bg-[#002816]">
-          More Products
-        </Link>
-      </div>
-
-      <div className="flex items-center justify-center mt-[50px] mb-2">
-                <Image
-                  src="/form-with-logo.png" 
-                  alt="Temp. Contact Form"
-                  width={450}
-                  height={450}
-                />
-            </div>
-
-    </div>
+    </PageWrapper>
   );
 }
