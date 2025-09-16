@@ -8,8 +8,9 @@ import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#141414] h-[42px] px-8 pt-3 shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-white dark:bg-[#141414] h-[42px] px-8 pt-3 shadow-md z-50 transition-colors duration-300">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Image
@@ -22,7 +23,7 @@ export default function Navbar() {
         </div>
 
         {/*Desktop navbar*/}
-        <div className="hidden md:flex space-x-10 text-[#CCCCCC] text-sm font-normal">
+        <div className="hidden md:flex space-x-10 text-black dark:text-[#CCCCCC] text-sm font-normal">
           <Link href="/" className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
           <Link href="/about_us" className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
           <Link href="/products" className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
@@ -32,7 +33,7 @@ export default function Navbar() {
         {/*Mobile hamburger button*/}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#CCCCCC] focus:outline-none"
+          className="md:hidden text-black dark:text-[#CCCCCC] focus:outline-none transition-colors duration-200"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -40,7 +41,7 @@ export default function Navbar() {
 
       {/*Mobile menu*/}
       {isOpen && (
-        <div className="md:hidden flex flex-col space-y-4 mt-2 text-[#CCCCCC] text-sm font-normal bg-[#141414] p-4 shadow-lg">
+        <div className="md:hidden flex flex-col space-y-4 mt-2 text-black dark:text-[#CCCCCC] text-sm font-normal bg-white dark:bg-[#141414] p-4 shadow-lg transition-colors duration-300">
           <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Home</Link>
           <Link href="/about_us" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">About Us</Link>
           <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#4A9833] transition-colors duration-200">Products</Link>
@@ -48,6 +49,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-
-);
+  );
 }
