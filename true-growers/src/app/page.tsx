@@ -2,6 +2,7 @@ import Image from "next/image";
 import productData from "./product_data.json";
 import Link from "next/link";
 import PageWrapper from "./wrapper";
+import LicensesAccordion from "./licenses";
 
 export default function Home() {
   const products = productData.products ?? [];
@@ -33,7 +34,9 @@ export default function Home() {
 
         {/* Quote Section */}
         <div className="text-center my-12">
-          <p className="font-normal text-2xl">“Quote of some sort here.”</p>
+          <p className="font-normal text-2xl">
+            Cultivating innovation and quality in cannabis since 2021
+          </p>
         </div>
 
         {/* Product Cards */}
@@ -42,7 +45,7 @@ export default function Home() {
             <div
               key={product.product_number}
               className="rounded-xl p-4 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
-              >
+            >
               <div className="flex gap-4">
                 <Image
                   src={product.image}
@@ -64,17 +67,17 @@ export default function Home() {
 
         {/* BUTTON PRODUCTS */}
         <div className="flex justify-center pb-5">
-          <Link href="/products" className="button rounded py-2 px-6 font-medium bg-[#4A9833] dark:bg-[#015730] text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300">More Products</Link>
+          <Link
+            href="/products"
+            className="button rounded py-2 px-6 font-medium bg-[#4A9833] dark:bg-[#015730] text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300"
+          >
+            More Products
+          </Link>
         </div>
 
-        <div className="flex items-center justify-center mt-[50px] mb-2">
-          <Image
-            src="/form-with-logo.png"
-            alt="Temp. Contact Form"
-            width={450}
-            height={450}
-          />
-        </div>
+        {/* Licenses Accordion */}
+        <LicensesAccordion />
+        
       </div>
     </PageWrapper>
   );
