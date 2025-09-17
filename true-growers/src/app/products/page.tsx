@@ -7,6 +7,7 @@ type Product = {
   product_number: string;
   title: string;
   file_location: string;
+  info: string;
   image: string;
 };
 
@@ -15,40 +16,47 @@ export default function ProductsPage() {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col items-center">
-        <h1 className="text-2xl mb-6">Products</h1>
-
-        <div
-          className="grid gap-6 w-full px-4
-                     grid-cols-[repeat(auto-fit,minmax(260px,1fr))] 
-                     sm:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] 
-                     lg:grid-cols-[repeat(auto-fit,minmax(436px,1fr))] 
-                     max-w-[1400px] mx-auto"
-        >
-          {products.map((product) => (
-            <Link
-              key={product.product_number}
-              href={`/products/${product.product_number}`}
-              className="rounded-2xl shadow-md overflow-hidden flex items-center p-4
-                         bg-[#D2E4D6] dark:bg-[#36593D]
-                         hover:bg-[#4A9833] dark:hover:bg-[#346B24]
-                         transition-colors duration-300 w-full"
-            >
-              <div className="w-28 h-28 relative flex-shrink-0">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  fill
-                  className="object-cover rounded-md"
-                />
-              </div>
-
-              <div className="ml-6 flex-1">
-                <h2 className="text-lg font-medium">{product.title}</h2>
-              </div>
-            </Link>
-          ))}
+      <div className="mx-auto max-w-5xl px-6 mt-20">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl">Products</h1>
+          <p className="text-gray-400 mt-3 text-lg">
+            Browse our collection of products. Click any item to learn more.
+          </p>
         </div>
+
+        {/* Product List */}
+        <ul className="space-y-8">
+          {products.map((product) => (
+            <li
+              key={product.product_number}
+              className="border border-gray-700 rounded-xl p-5 hover:border-green-600 transition-colors"
+            >
+              <Link href={`/products/${product.product_number}`} className="flex items-start gap-6 group">
+                {/* Image */}
+                <div className="w-28 h-28 relative flex-shrink-0">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+
+                {/* Text Content */}
+                <div>
+                  <h2 className="text-2xl">
+                    {product.title}
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-1">
+                    Product #{product.product_number}
+                  </p>
+                  <p className="text-base text-gray-300 mt-3">{product.info}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </PageWrapper>
   );
