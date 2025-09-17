@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        coda: ["Coda", "sans-serif"],
+        heading: ["var(--font-coda)", "sans-serif"],
+        body: ["var(--font-lato)", "sans-serif"],
       },
     },
   },
