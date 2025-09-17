@@ -101,7 +101,8 @@ export default function LicensesAccordion() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 pb-12">
-      <h2 className="text-center text-2xl mb-6">Our Licenses</h2>
+      <div className="h-px bg-gray-400 mb-[50px]"></div>
+      <h2 className="text-center text-2xl mb-6">Licenses</h2>
       <div className="space-y-4">
         {items.map((it) => (
           <LicenseItem key={it.src} {...it} />

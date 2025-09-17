@@ -20,7 +20,7 @@ export default function Home() {
             src="/cannabis-sativa-L.jpg"
             alt="Background cannabis plants"
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-85"
           />
           <div className="absolute inset-0 flex justify-center items-center">
             <Image

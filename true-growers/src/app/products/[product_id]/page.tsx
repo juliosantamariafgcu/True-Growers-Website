@@ -54,7 +54,7 @@ export default async function ProductPage({
       <div className="flex flex-col items-center">
         {/* Back button */}
         <div className="w-[95%] max-w-5xl mb-4">
-          <Link href="/products" className="text-[#015730] hover:text-[#4A9833] transition-colors duration-200 flex items-center">
+          <Link href="/products" className="text-[#439833] transition-colors duration-200 flex items-center">
             ← Back to Products
           </Link>
         </div>
@@ -72,7 +72,7 @@ export default async function ProductPage({
             </div>
           )}
           <div className="ml-6">
-            <h1 className="text-2xl font-semibold">{currentProduct.title}</h1>
+            <h1 className="text-2xl">{currentProduct.title}</h1>
           </div>
         </div>
 

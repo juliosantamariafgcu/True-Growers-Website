@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={`${coda.className} bg-[#EBEBEB] text-[#141414] dark:bg-[#141414] dark:text-[#EBEBEB] min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="flex-1 pt-[50px]">
+        <main className="flex-1 pt-[42px]">
           {children}
         </main>
       </body>
