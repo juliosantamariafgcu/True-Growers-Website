@@ -123,7 +123,7 @@ export default function AboutUs() {
             Meet the Team
           </h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            {["Alice Johnson", "Brian Lee", "Carla Martinez", "Julio Santamaria", "William Ward"].map((name, idx) => (
+            {["Alice Johnson", "Brian Lee", "Carla Martinez"].map((name, idx) => (
               <div
                 key={idx}
                 className="rounded-xl p-6 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
