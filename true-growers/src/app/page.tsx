@@ -70,8 +70,8 @@ export default function Home() {
         <div className="flex justify-center pb-5">
           <Link
             href="/products"
-            className="button rounded py-2 px-6 mb-6 font-medium bg-[#4A9833] dark:bg-[#015730] 
-            text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300"
+            className="button rounded py-2 px-6 mb-6 font-medium bg-[#4A9833] hover:bg-[#346B24] active:bg-[#36593D]
+            text-[#EBEBEB] dark:bg-[#015730] dark:hover:bg-[#002816] transition-colors duration-300"
           >
             More Products
           </Link>
