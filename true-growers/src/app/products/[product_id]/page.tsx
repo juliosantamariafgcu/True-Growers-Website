@@ -51,7 +51,7 @@ export default async function ProductPage({
 
   return (
     <PageWrapper>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-6">
         {/* Back button */}
         <div className="w-[95%] max-w-5xl mb-4">
           <Link href="/products" className="text-[#439833] transition-colors duration-200 flex items-center">

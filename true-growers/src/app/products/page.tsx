@@ -16,7 +16,7 @@ export default function ProductsPage() {
 
   return (
     <PageWrapper>
-      <div className="mx-auto max-w-5xl px-6 mt-20">
+      <div className="mx-auto max-w-5xl px-6 mt-20 mb-6">
         {/* Heading */}
         <div className="text-center mb-16">
           <h1 className="text-5xl">Products</h1>

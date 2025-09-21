@@ -35,7 +35,7 @@ export default function Home() {
         {/* Quote Section */}
         <div className="text-center my-12">
           <p className="font-normal text-2xl">
-            Cultivating innovation and quality in cannabis since 2021
+            "Cultivating innovation and quality in cannabis since 2021."
           </p>
         </div>
 
@@ -44,7 +44,8 @@ export default function Home() {
           {randomProducts.map((product) => (
             <div
               key={product.product_number}
-              className="rounded-xl p-4 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
+              className="rounded-xl p-4 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] 
+              dark:hover:bg-[#346B24] transition-colors duration-300"
             >
               <div className="flex gap-4">
                 <Image
@@ -69,7 +70,8 @@ export default function Home() {
         <div className="flex justify-center pb-5">
           <Link
             href="/products"
-            className="button rounded py-2 px-6 font-medium bg-[#4A9833] dark:bg-[#015730] text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300"
+            className="button rounded py-2 px-6 mb-6 font-medium bg-[#4A9833] dark:bg-[#015730] 
+            text-[#EBEBEB] hover:bg-[#346B24] dark:hover:bg-[#002816] transition-colors duration-300"
           >
             More Products
           </Link>
@@ -79,6 +81,7 @@ export default function Home() {
         <LicensesAccordion />
         
       </div>
+    {/* Animation Wrapper */}
     </PageWrapper>
   );
 }
