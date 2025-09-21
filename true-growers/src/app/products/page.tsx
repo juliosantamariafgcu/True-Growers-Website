@@ -30,7 +30,8 @@ export default function ProductsPage() {
           {products.map((product) => (
             <li
               key={product.product_number}
-              className="border border-gray-700 rounded-xl p-5 hover:border-green-600 transition-colors"
+              className="border border-gray-700 rounded-xl p-5 hover:border-green-600 
+              active:border-[#36593D] transition-colors"
             >
               <Link href={`/products/${product.product_number}`} className="flex items-start gap-6 group">
                 {/* Image */}

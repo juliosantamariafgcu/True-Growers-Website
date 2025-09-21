@@ -54,7 +54,8 @@ export default async function ProductPage({
       <div className="flex flex-col items-center mb-6">
         {/* Back button */}
         <div className="w-[95%] max-w-5xl mb-4">
-          <Link href="/products" className="text-[#439833] transition-colors duration-200 flex items-center">
+          <Link href="/products" className="text-[#439833] active:text-[#36593D] transition-colors 
+          duration-300 flex items-center">
             ← Back to Products
           </Link>
         </div>
