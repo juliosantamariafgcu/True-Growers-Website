@@ -25,7 +25,7 @@ function LicenseItem({ name, title, src }: Item) {
       <summary
         className="flex items-center justify-between gap-3 cursor-pointer select-none 
         list-none p-4 rounded-xl hover:bg-[#4A9833] active:bg-[#36593D] dark:hover:bg-[#346B24] 
-        transition-colors duration-400 [&::-webkit-details-marker]:hidden"
+        dark:active:bg-[#002816] transition-colors duration-400 [&::-webkit-details-marker]:hidden"
       >
         <span className="font-medium">{name}</span>
         <svg
@@ -63,8 +63,8 @@ function LicenseItem({ name, title, src }: Item) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded py-2 px-4 font-medium text-[#EBEBEB] bg-[#4A9833] 
-            hover:bg-[#346B24] active:bg-[#36593D] dark:bg-[#015730] dark:hover:bg-[#002816] 
-            transition-colors duration-400"
+            hover:bg-[#346B24] active:bg-[#36593D] dark:bg-[#015730] dark:hover:bg-[#014023] 
+            dark:active:bg-[#002816] transition-colors duration-400"
           >
             Open in new tab
           </Link>
