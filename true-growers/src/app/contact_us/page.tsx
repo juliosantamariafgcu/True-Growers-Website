@@ -18,7 +18,7 @@ export default function ContactForm() {
     'Product Information',
     'Wholesale Inquiry',
     'Partnership Opportunity',
-    'Press / Media',
+    'True-Growers lincesing',
     'General Question',
   ];
 
