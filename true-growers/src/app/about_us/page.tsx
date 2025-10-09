@@ -8,6 +8,7 @@ export default function AboutUs() {
     name,
     position: info.position,
     about: info.about,
+    image: info.image,
   }));
 
   return (
@@ -137,7 +138,7 @@ export default function AboutUs() {
                 className="rounded-xl p-6 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
               >
                 <Image
-                  src="/blank-pfp.png"
+                  src={person.image}
                   alt={person.name}
                   width={100}
                   height={100}
