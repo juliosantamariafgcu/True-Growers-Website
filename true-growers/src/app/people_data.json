@@ -1,0 +1,34 @@
+{
+    "people":[
+        {
+            "Name1":
+            {
+                "position":"position1",
+                "about":"More about person 1",
+                "more info?":"more info?"
+            },
+
+            "Name2":
+            {
+                "position":"position2",
+                "about":"More about person 2",
+                "more info?":"more info?"
+            },
+
+            "Name3":
+            {
+                "position":"position3",
+                "about":"More about person 3",
+                "more info?":"more info?"
+            },
+            
+            "Name4":
+            {
+                "position":"position4",
+                "about":"More about person 4",
+                "more info?":"more info?"
+            }
+        }
+        
+    ]
+}
