@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import productData from "../product_data.json";
 import PageWrapper from "../wrapper";
-import { ChevronDown, Grid, List } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 type Product = {
   product_number: string;
@@ -62,7 +62,7 @@ export default function ProductsPage() {
               }`}
               title="Grid view"
             >
-              <Grid className="w-5 h-5 text-gray-900 dark:text-white" />
+              Grid
             </button>
             <button
               onClick={() => setIsGridView(false)}
@@ -71,7 +71,7 @@ export default function ProductsPage() {
               }`}
               title="List view"
             >
-              <List className="w-5 h-5 text-gray-900 dark:text-white" />
+              List
             </button>
           </div>
         </div>
@@ -84,41 +84,47 @@ export default function ProductsPage() {
                   row.some((p) => p.product_number === openProduct) ? "mb-0" : "mb-8"
                 }`}
               >
-                {row.map((product) => (
-                  <div
-                    key={product.product_number}
-                    onClick={() => toggleProduct(product.product_number)}
-                    className={`border border-gray-300 dark:border-gray-700 rounded-xl p-5 cursor-pointer hover:border-green-600 transition-colors bg-gray-100 dark:bg-gray-900/30 ${
-                      openProduct === product.product_number ? "border-green-600" : ""
-                    }`}
-                  >
-                    <div className="flex flex-col gap-4 items-start">
-                      <div className="relative w-28 h-28 flex-shrink-0">
-                        <Image
-                          src={product.image}
-                          alt={product.title}
-                          fill
-                          className="object-cover rounded-lg"
-                        />
-                      </div>
-                      <div className="flex-1 w-full">
-                        <div className="flex justify-between items-center">
-                          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                            {product.title}
-                          </h2>
-                          <ChevronDown
-                            className={`w-5 h-5 text-gray-600 dark:text-gray-400 transform transition-transform ${
-                              openProduct === product.product_number ? "rotate-180" : ""
-                            }`}
+                {row.map((product) => {
+                  const isOpen = openProduct === product.product_number;
+                  return (
+                    <div
+                      key={product.product_number}
+                      onClick={() => toggleProduct(product.product_number)}
+                      className={`border border-gray-300 dark:border-gray-700 rounded-xl p-5 cursor-pointer hover:border-green-600 transition-colors bg-gray-100 dark:bg-gray-900/30 ${
+                        isOpen ? "border-green-600" : ""
+                      }`}
+                    >
+                      <div className="flex flex-col gap-4 items-start">
+                        <div className="relative w-28 h-28 flex-shrink-0">
+                          <Image
+                            src={product.image}
+                            alt={product.title}
+                            fill
+                            className="object-cover rounded-lg"
                           />
                         </div>
-                        <p className="text-base text-gray-800 dark:text-gray-300 mt-3">
-                          {product.info}
-                        </p>
+                        <div className="flex-1 w-full">
+                          <div className="flex justify-between items-center">
+                            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                              {product.title}
+                            </h2>
+                            <div className="flex items-center gap-1 text-green-600 font-medium">
+                              <span>{isOpen ? "View less" : "View more details"}</span>
+                              <ChevronDown
+                                className={`w-5 h-5 text-green-600 transform transition-transform ${
+                                  isOpen ? "rotate-180" : ""
+                                }`}
+                              />
+                            </div>
+                          </div>
+                          <p className="text-base text-gray-800 dark:text-gray-300 mt-3">
+                            {product.info}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {openProduct && row.some((p) => p.product_number === openProduct) && (
@@ -162,61 +168,67 @@ export default function ProductsPage() {
           ))
         ) : (
           <div className="flex flex-col gap-6">
-            {products.map((product) => (
-              <div
-                key={product.product_number}
-                onClick={() => toggleProduct(product.product_number)}
-                className={`border border-gray-300 dark:border-gray-700 rounded-xl p-5 cursor-pointer hover:border-green-600 transition-colors bg-gray-100 dark:bg-gray-900/30 ${
-                  openProduct === product.product_number ? "border-green-600" : ""
-                }`}
-              >
-                <div className="flex flex-row gap-4 items-start">
-                  <div className="relative w-28 h-28 flex-shrink-0">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center">
-                      <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                        {product.title}
-                      </h2>
-                      <ChevronDown
-                        className={`w-5 h-5 text-gray-600 dark:text-gray-400 transform transition-transform ${
-                          openProduct === product.product_number ? "rotate-180" : ""
-                        }`}
+            {products.map((product) => {
+              const isOpen = openProduct === product.product_number;
+              return (
+                <div
+                  key={product.product_number}
+                  onClick={() => toggleProduct(product.product_number)}
+                  className={`border border-gray-300 dark:border-gray-700 rounded-xl p-5 cursor-pointer hover:border-green-600 transition-colors bg-gray-100 dark:bg-gray-900/30 ${
+                    isOpen ? "border-green-600" : ""
+                  }`}
+                >
+                  <div className="flex flex-row gap-4 items-start">
+                    <div className="relative w-28 h-28 flex-shrink-0">
+                      <Image
+                        src={product.image}
+                        alt={product.title}
+                        fill
+                        className="object-cover rounded-lg"
                       />
                     </div>
-                    <p className="text-base text-gray-800 dark:text-gray-300 mt-3">
-                      {product.info}
-                    </p>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center">
+                        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                          {product.title}
+                        </h2>
+                        <div className="flex items-center gap-1 text-green-600 font-medium">
+                          <span>{isOpen ? "View less" : "View more details"}</span>
+                          <ChevronDown
+                            className={`w-5 h-5 text-green-600 transform transition-transform ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </div>
+                      </div>
+                      <p className="text-base text-gray-800 dark:text-gray-300 mt-3">
+                        {product.info}
+                      </p>
 
-                    <div
-                      className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                        openProduct === product.product_number
-                          ? "max-h-[500px] opacity-100 mt-4 border-t border-gray-300 dark:border-gray-700 pt-4"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      {product.description ? (
-                        <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-1 animate-fadeSlideIn">
-                          {Object.values(product.description).map((desc, i) => (
-                            <li key={i}>{desc}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p className="text-gray-600 dark:text-gray-400 animate-fadeSlideIn">
-                          No additional details available.
-                        </p>
-                      )}
+                      <div
+                        className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                          isOpen
+                            ? "max-h-[500px] opacity-100 mt-4 border-t border-gray-300 dark:border-gray-700 pt-4"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        {product.description ? (
+                          <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-1 animate-fadeSlideIn">
+                            {Object.values(product.description).map((desc, i) => (
+                              <li key={i}>{desc}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-gray-600 dark:text-gray-400 animate-fadeSlideIn">
+                            No additional details available.
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>
