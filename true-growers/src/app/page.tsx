@@ -10,6 +10,10 @@ export default function Home() {
   const [showIndicator, setShowIndicator] = useState(true);
   const controls = useAnimation();
 
+  // Helper: Create URL slugs for product routes
+  const slugify = (title: string) =>
+    title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
   // Select random featured products
   useEffect(() => {
     const products = productData.products ?? [];
@@ -39,7 +43,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-hidden">
-
       {/* --- DESKTOP BACKGROUND --- */}
       <div
         className="hidden md:block fixed inset-0 -z-10 bg-center bg-no-repeat bg-cover md:bg-top"
@@ -126,69 +129,59 @@ export default function Home() {
 
       {/* --- MAIN CONTENT SECTIONS --- */}
       <section className="relative z-10 bg-[#EBEBEB]/95 dark:bg-[#141414]/95 backdrop-blur-md rounded-t-3xl pt-16 pb-20 space-y-12 sm:space-y-20 px-4 sm:px-6">
-
         {/* --- PRODUCTS SECTION --- */}
-        <div className="max-w-6xl mx-auto bg-[#D2E4D6] dark:bg-[#36593D] rounded-3xl shadow-lg p-6 sm:p-10 md:p-12 hover:bg-[#4A9833]/90 dark:hover:bg-[#346B24]/90 transition-all duration-300">
-          {/* Desktop Layout */}
-          <div className="hidden md:flex flex-row items-center gap-10">
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="font-heading text-3xl font-semibold mb-6">
-                Our Featured Products
-              </h2>
-              <p className="text-base leading-relaxed mb-8 text-gray-800 dark:text-gray-200">
-                Discover our finest strains cultivated with precision and care.
-                Each product is crafted to meet medical-grade standards with
-                unmatched consistency and quality.
-              </p>
-              <Link
-                href="/products"
-                className="inline-block rounded py-2 px-6 font-medium text-[#EBEBEB] bg-[#4A9833]
-                hover:bg-[#346B24] active:bg-[#36593D] dark:bg-[#36593D] dark:hover:bg-[#015730]
-                dark:active:bg-[#002816] transition-colors duration-300"
-              >
-                View All Products
-              </Link>
-            </div>
-            <div className="flex-1 grid grid-cols-3 gap-4 justify-items-center">
-              {randomProducts.map((product) => (
-                <div
-                  key={product.product_number}
-                  className="rounded-xl bg-white/60 dark:bg-black/30 p-4 shadow-md w-[160px] hover:scale-105 transition-transform"
-                >
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    width={140}
-                    height={140}
-                    className="rounded-md object-cover mb-3"
-                  />
-                  <p className="font-medium text-sm text-gray-800 dark:text-gray-100 text-center">
-                    {product.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+<div className="max-w-6xl mx-auto bg-[#D2E4D6] dark:bg-[#36593D] rounded-3xl shadow-lg p-6 sm:p-10 md:p-12 hover:bg-[#4A9833]/90 dark:hover:bg-[#346B24]/90 transition-all duration-300">
+  <div className="flex flex-col items-center">
+    {/* Header Row: Title Left, Text Right */}
+    <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+      <h2 className="font-heading text-3xl font-semibold mb-4 md:mb-0 md:w-1/2 text-left">
+        Our Featured Products
+      </h2>
+      <p className="text-base leading-relaxed text-gray-800 dark:text-gray-200 md:w-1/2 text-right md:text-left">
+        Discover our finest strains cultivated with precision and care.
+        Each product is crafted to meet medical-grade standards with
+        unmatched consistency and quality.
+      </p>
+    </div>
 
-          {/* Mobile Layout */}
-          <div className="block md:hidden text-center">
-            <h2 className="font-heading text-2xl font-semibold mb-4">
-              Our Featured Products
-            </h2>
-            <p className="text-base leading-relaxed mb-6 text-gray-800 dark:text-gray-200">
-              Discover our finest strains crafted with quality and care. Tap
-              below to explore our full collection.
-            </p>
-            <Link
-              href="/products"
-              className="inline-block rounded py-2 px-6 font-medium text-[#EBEBEB] bg-[#4A9833]
-              hover:bg-[#346B24] active:bg-[#36593D] dark:bg-[#36593D] dark:hover:bg-[#015730]
-              dark:active:bg-[#002816] transition-colors duration-300"
-            >
-              View All Products
-            </Link>
+    {/* Product Cards Row */}
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center mb-10">
+      {randomProducts.map((product) => (
+        <Link
+          key={product.product_number}
+          href={`/products/${slugify(product.title)}`}
+          className="border border-gray-300 dark:border-gray-700 rounded-xl p-5 bg-gray-100 dark:bg-gray-900/30 flex flex-col justify-between hover:border-green-600 transition-all w-full max-w-[260px]"
+        >
+          <div className="relative w-full h-40 mb-4">
+            <Image
+              src={product.image}
+              alt={product.title}
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
-        </div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center">
+            {product.title}
+          </h3>
+          <p className="text-sm text-gray-700 dark:text-gray-300 text-center mt-2">
+            {product.info}
+          </p>
+        </Link>
+      ))}
+    </div>
+
+    {/* Button at the Bottom */}
+    <Link
+      href="/products"
+      className="inline-block rounded py-2 px-6 font-medium text-[#EBEBEB] bg-[#4A9833]
+      hover:bg-[#346B24] active:bg-[#36593D] dark:bg-[#36593D] dark:hover:bg-[#015730]
+      dark:active:bg-[#002816] transition-colors duration-300"
+    >
+      View All Products
+    </Link>
+  </div>
+</div>
+
 
         {/* --- ABOUT SECTION --- */}
         <div className="max-w-6xl mx-auto bg-[#D2E4D6] dark:bg-[#36593D] rounded-3xl shadow-lg p-6 sm:p-10 md:p-12 hover:bg-[#4A9833]/90 dark:hover:bg-[#346B24]/90 transition-all duration-300">
