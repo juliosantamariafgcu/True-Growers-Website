@@ -1,7 +1,16 @@
 import Image from "next/image";
 import PageWrapper from "../wrapper";
+import peopleData from "../people_data.json"; // adjust path if needed
 
 export default function AboutUs() {
+  // Extract people data
+  const people = Object.entries(peopleData.people[0]).map(([name, info]) => ({
+    name,
+    position: info.position,
+    about: info.about,
+    image: info.image,
+  }));
+
   return (
     <PageWrapper>
       <div>
@@ -117,31 +126,30 @@ export default function AboutUs() {
         </div>
 
 
-        {/* Meet the Team */}
+       {/* Meet the Team */}
         <div className="px-8 py-12">
           <h2 className="font-heading text-3xl font-semibold text-center mb-8 tracking-tight">
             Meet the Team
           </h2>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            {["Alice Johnson", "Brian Lee", "Carla Martinez"].map((name, idx) => (
+            {people.map((person, idx) => (
               <div
                 key={idx}
                 className="rounded-xl p-6 bg-[#D2E4D6] dark:bg-[#36593D] hover:bg-[#4A9833] dark:hover:bg-[#346B24] transition-colors duration-300"
               >
                 <Image
-                  src="/blank-pfp.png"
-                  alt={name}
+                  src={person.image}
+                  alt={person.name}
                   width={100}
                   height={100}
                   className="mx-auto mb-4 rounded-full object-cover"
                 />
-                <h3 className="font-heading text-lg font-semibold">{name}</h3>
+                <h3 className="font-heading text-lg font-semibold">{person.name}</h3>
                 <p className="font-body text-sm text-gray-700 dark:text-gray-200">
-                  Position Title
+                  {person.position}
                 </p>
                 <p className="font-body mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                  Short professional bio goes here. Explains background,
-                  expertise, and role in the company.
+                  {person.about}
                 </p>
               </div>
             ))}
